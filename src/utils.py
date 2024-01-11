@@ -7,8 +7,6 @@ import dill
 from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
 
-
-
 def save_object(file_path, obj):
     try:
         dir_path=os.path.dirname(file_path)
@@ -23,7 +21,6 @@ def evaluate_models(X_train, y_train,X_test,y_test, models):
         report={}
         for i in range(len(list(models))):
             model=list(models.values())[i]
-
             model.fit(X_train,y_train)
 
             y_train_pred=model.predict(X_train)
